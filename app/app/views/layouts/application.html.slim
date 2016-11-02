@@ -1,0 +1,21 @@
+doctype html
+html.full
+  head
+    title Girolstein Bedachungen
+    meta charset="utf-8"
+    meta[
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    meta http-equiv="x-ua-compatible" content="ie=edge"
+
+    = csrf_meta_tags
+    = stylesheet_link_tag('application', media: 'all', \
+                          'data-turbolinks-track' => 'reload')
+  body
+    = render('layouts/navbar')
+    .container
+      = yield
+    = render('layouts/footer')
+
+    = javascript_include_tag('application',
+                             'data-turbolinks-track' => 'reload')

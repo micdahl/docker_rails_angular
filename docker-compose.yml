@@ -1,0 +1,30 @@
+version: '2'
+services:
+  db:
+    image: postgres
+  app:
+    build: ./app
+    command: bundle exec rails s -b '0.0.0.0'
+    volumes:
+      - ./app:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  httpd:
+    image: httpd:latest
+    volumes:
+      - ./web/webroot:/usr/local/apache2/htdocs/
+      - ./web/node_modules:/usr/local/apache2/htdocs/node_modules
+    ports:
+      - "80:80"
+  npm:
+    build: ./npm
+    volumes:
+      - ./web:/npm
+  tsc:
+    build: ./tsc
+    volumes:
+      - ./web:/tsc
+    depends_on:
+      - npm

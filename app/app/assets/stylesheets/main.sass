@@ -1,0 +1,37 @@
+$body-bg: transparent
+$body-color: #fff200
+$brand-primary: $body-color
+$brand-background: #656263
+
+$enable-flex: true
+$enable-rounded: false
+
+$btn-primary-color: $brand-background
+$input-border-focus: $brand-primary
+$navbar-light-color: $brand-background
+$navbar-light-hover-color: darken($navbar-light-color, 30%)
+$navbar-light-active-color: darken($navbar-light-color, 50%)
+$navbar-light-disabled-color: $brand-background
+
+@import "bootstrap"
+
+$background-image: 'background.jpg'
+
+.full
+  background: image-url($background-image) no-repeat center center fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  background-size: cover
+  -o-background-size: cover
+
+.start-image
+  max-width: 100%
+
+.transparent
+  background-color: transparent
+
+.footer
+  position: fixed
+  bottom: 0
+  width: 100%
+  background-color: $body-color

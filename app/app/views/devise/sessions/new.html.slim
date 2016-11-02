@@ -1,0 +1,24 @@
+.row.flex-xs-middle
+  .col-md-10.offset-md-1
+    br
+    h2 Anmelden
+
+    = form_for(resource,
+               as: resource_name,
+               url: session_path(resource_name)) do |f|
+      .form-group
+        = f.label(:email, 'E-Mail')
+        = f.email_field(:email, autofocus: true, class: 'form-control')
+      .form-group
+        = f.label(:password, 'Passwort')
+        = f.password_field(:password, autocomplete: 'off',
+                           class: 'form-control')
+      - if devise_mapping.rememberable?
+        .form-check
+          = f.label(:remember_me, class: 'form-check-label') do
+            = f.check_box(:remember_me, class: 'form-check-input')
+            | Angemeldet bleiben
+      .actions
+        = f.submit('Anmelden', class: 'btn btn-primary')
+
+    = render 'devise/shared/links'

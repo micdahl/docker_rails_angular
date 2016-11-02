@@ -1,0 +1,18 @@
+nav.navbar.navbar-full.navbar-light.bg-primary.text-uppercase
+  #nav-content.collapse.navbar-toggleable-xs
+    a.navbar-brand href="#" Girolstein Bedachungen
+    - if admin_signed_in?
+      ul.nav.navbar-nav.pull-xs-left
+        li.nav-item
+          = link_to('Abmelden', destroy_admin_session_path,
+                    method: :delete, class: 'nav-link')
+    ul.nav.navbar-nav.pull-xs-right
+      li.nav-item
+        a.nav-link href="#" Home
+      li.nav-item
+        a.nav-link  href="#" Flachdach
+      li.nav-item
+        a.nav-link href="#" Steildach
+  button.navbar-toggler.hidden-sm-up[
+    data-toggle="collapse"
+    data-target="#nav-content"] &#9776;

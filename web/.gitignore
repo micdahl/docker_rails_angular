@@ -1,0 +1,4 @@
+node_modules/**
+typings/
+webroot/script/**
+!webroot/script/systemjs.config.js
